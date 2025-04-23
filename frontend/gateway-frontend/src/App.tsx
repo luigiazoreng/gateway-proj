@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
-        {/* Adicione outras rotas aqui */}
+
       </Routes>
     </Router>
   );
