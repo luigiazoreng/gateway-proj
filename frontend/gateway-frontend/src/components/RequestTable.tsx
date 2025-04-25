@@ -1,9 +1,11 @@
-const rows = [
-  { date: "2025-04-23 10:44:27", status: 200, conn: "nfeio → invoice-creation-success", attempts: 1 },
-  { date: "2025-04-23 10:39:14", status: 200, conn: "nfeio → invoice-creation-success", attempts: 1 },
-];
+import { RequestType } from "../types";
 
-export function RequestTable() {
+type Props = {
+  data: RequestType[];
+  onRowClick: (req: RequestType) => void;
+};
+
+export function RequestTable({ data, onRowClick }: Props) {
   return (
     <table className="w-full text-sm text-left">
       <thead className="text-slate-400 border-b border-slate-700">
@@ -16,9 +18,9 @@ export function RequestTable() {
         </tr>
       </thead>
       <tbody>
-        {rows.map((r, i) => (
-          <tr key={i} className="border-b border-slate-800 hover:bg-slate-800 transition">
-            <td className="py-2">{r.date}</td>
+        {data.map((r, i) => (
+          <tr key={i} className="border-b border-slate-800 hover:bg-slate-800 transition" onClick={() => onRowClick(r)}>
+            <td className="py-2">{r.timestamp}</td>
             <td>
               <span className="bg-green-600 text-white px-2 py-1 rounded text-xs">200</span>
             </td>
