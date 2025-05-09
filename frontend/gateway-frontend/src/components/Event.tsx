@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { RequestType } from "../types";
-
-
 type Props = {
   request: RequestType;
   onClose: () => void;
@@ -11,14 +9,15 @@ export default function EventTab({ request, onClose }: Props) {
   const [activeTab, setActiveTab] = useState("Request");
   return (
     <aside className="w-80 h-screen bg-gray-900 text-white flex flex-col p-2">
-      <h1 className="text-lg font-bold px-4 py-2">Grafana</h1>
-      <button className="text-gray-400 hover:text-gray-200 px-4 py-2" onClick={onClose}>
-        Close
-      </button>
-      <h2 className="text-xl font-bold">Details for {request.name}</h2>
+      <div className="flex items-center justify-between px-4 py-2">
+        <h1 className="text-lg font-bold">Event</h1>
+        <button className="text-gray-400 hover:text-gray-200" onClick={onClose}>
+          Close
+        </button>
+      </div>
 
       {/* Status section */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-start flex-col justify-between mb-6">
         <div className="flex items-center space-x-2">
           <span className="h-3 w-3 bg-green-500 rounded-full"></span>
           <span className="font-bold text-green-400">200</span>
