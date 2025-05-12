@@ -1,51 +1,17 @@
+import Button from "../components/form/Button";
+import Input from "../components/form/Input";
+
 export default function RegisterPage() {
   return (
     <div className="flex items-center justify-center h-screen bg-[#0f111a] text-white">
       <div className="bg-[#1a1c26] p-8 rounded-lg shadow-md w-96">
         <h1 className="text-2xl font-bold mb-4">Register</h1>
         <form>
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-2" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full p-2 bg-[#2a2d38] border border-gray-600 rounded focus:outline-none focus:ring focus:ring-blue-500"
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-sm font-medium mb-2"
-              htmlFor="password"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="w-full p-2 bg-[#2a2d38] border border-gray-600 rounded focus:outline-none focus:ring focus:ring-blue-500"
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-sm font-medium mb-2"
-              htmlFor="password"
-            >
-              Confirm Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="w-full p-2 bg-[#2a2d38] border border-gray-600 rounded focus:outline-none focus:ring focus:ring-blue-500"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-500"
-          >
-            Register
-          </button>
+          <Input label="Username" id="username"></Input>
+          <Input label="Email" id="email" type="email"></Input>
+          <Input label="Password" id="password" type="password"></Input>
+          <Input label="Confirm Password" id="confirmPassword" type="password"></Input>
+          <Button type="submit">Register</Button>
         </form>
       </div>
     </div>
